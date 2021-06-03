@@ -1,0 +1,1 @@
+docker run --name contenedorlinux -i -t imagenlinux
