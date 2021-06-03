@@ -1,18 +1,4 @@
-FROM jenkins/inbound-agent
+FROM alpine:3.7
 
-USER root
-
-RUN apt-get update \
-    && apt-get install -y curl \
-    && apt-get -y autoclean
-
-USER jenkins
-USER root
-
-USER root
-#RUN apt install zip 
-RUN apt install unzip
-
-USER jenkins
-
-ENTRYPOINT ["jenkins-slave"]
+RUN apk add zip 
+RUN apk add unzip
